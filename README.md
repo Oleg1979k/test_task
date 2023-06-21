@@ -1,11 +1,17 @@
 Для клонирования проекта необходимо
-1.git clone git@github.com:Oleg1979k/test_task.git
-2.composer install
-3.php artisan migrate
+1.В терминале выполнить команду git clone git@github.com:Oleg1979k/test_task.git
+  для клонирования проекта из репозитория
+2.Затем выполнить команду composer install для установки необходимых библиотек.
+3.Перейти в папку проекта test_task cd test_task
+4.Создать новую БД в СУБД PostgreSQL.
+5.В корне проекта создать файл .env по подобию .env.example и настроить
+  соединение с вновь созданной БД
+3.Выполнить команду php artisan migrate для создания таблиц БД
 Для первого выполнения тестов необходимо выполнить 
 php artisan test
+В таблице slots должны появится записи нациентов к доктору на прием.
 Для повторного выполнения тестов необходимо:
-1.php artisan migrate:rollback --step=3
-2.php artisan migrate
+1.Выполнить команду php artisan migrate:rollback --step=3 для очистки БД
+2.Выполнить команду php artisan migrate для того, чтобы вновь создать необходимые таблицы
 3.php artisan test
 
